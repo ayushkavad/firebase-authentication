@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import "./button.styles.scss";
 
-const Button = ({ other, text }) => {
+const Button = ({ buttonType, text, ...other }) => {
   return (
     <Fragment>
-      {other ? (
-        <button className="direct__btns" type="button">
-          <img src={require(`../../assets/${other}.png`)} width="25" />
+      {buttonType ? (
+        <button className="direct__btns" type="button" {...other}>
+          <img src={require(`../../assets/${buttonType}.png`)} width="25" />
           <span>{text}</span>
         </button>
       ) : (

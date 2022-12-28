@@ -1,9 +1,23 @@
+import {
+  signInWithGooglePopup,
+  singInWithFacebookPopup,
+} from "../../utils/firebase/firebase.utils";
 import InputForm from "../input-form/input-form.component";
 import Button from "../button/button.component";
 import { Link } from "react-router-dom";
 import "./authentication.styles.scss";
 
 const Authentication = () => {
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    console.log(user);
+  };
+
+  const signInWithFacebook = async () => {
+    const response = await singInWithFacebookPopup();
+    // console.log(response);
+  };
+
   return (
     <div className="container">
       <div className="container__form">
@@ -19,9 +33,17 @@ const Authentication = () => {
           <p className="form__line">OR</p>
 
           <div className="direct">
-            <Button other="google" text="Continue with Google" />
-            <Button other="facebook" text="Continue with Facebook" />
-            <Button other="apple" text="Continue with Apple" />
+            <Button
+              buttonType="google"
+              text="Continue with Google"
+              onClick={signInWithGoogle}
+            />
+            <Button
+              buttonType="facebook"
+              text="Continue with Facebook"
+              onClick={signInWithFacebook}
+            />
+            <Button buttonType="github" text="Continue with Github" />
           </div>
         </form>
 
