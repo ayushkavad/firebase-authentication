@@ -12,7 +12,7 @@ const Form = () => {
       <div className="form__check">
         <div className="check__container">
           <InputForm type="checkbox" />
-          <p className="reminder">Remember for 3 days</p>
+          <p className="reminder">Remember for 30 days</p>
         </div>
 
         <Link className="form__link" to="/forgot-password">

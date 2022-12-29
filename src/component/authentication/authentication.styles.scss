@@ -60,11 +60,41 @@
   }
 
   .img {
-    background-image: url("../../assets/image.jpg");
+    // background-image: url("../../assets/image.jpg");
+    background-image: linear-gradient(120deg, #155799, #159957);
     background-size: cover;
-    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     box-shadow: rgb(38, 57, 77) 0px -20px 30px -2px;
     height: 100vh;
     width: 65vw;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .container__form {
+    margin: 60px auto;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .container__greet {
+    width: 200px;
+  }
+  .direct__btns {
+    width: 200px;
+  }
+
+  .quation {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }

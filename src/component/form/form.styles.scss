@@ -62,3 +62,18 @@
     transition: 0.3s all;
   }
 }
+
+@media screen and (max-width: 315px) {
+  .header__center {
+    margin: 0 10px 0;
+  }
+  .form__btn {
+    width: 200px;
+  }
+
+  .form__check {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

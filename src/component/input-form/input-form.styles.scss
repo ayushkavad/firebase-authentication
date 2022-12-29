@@ -8,3 +8,9 @@
   outline: none;
   // margin: 9px 0;
 }
+
+@media screen and (max-width: 315px) {
+  .form__input {
+    width: 200px;
+  }
+}

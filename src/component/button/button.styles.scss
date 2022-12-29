@@ -14,3 +14,9 @@
   font-size: 14px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 315px) {
+  .direct__btns {
+    width: 200px;
+  }
+}
