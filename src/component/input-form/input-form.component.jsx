@@ -4,7 +4,7 @@ import "./input-form.styles.scss";
 const InputForm = ({ ...other }) => {
   return (
     <Fragment>
-      <input className="form__input" {...other} />
+      <input {...other} />
     </Fragment>
   );
 };

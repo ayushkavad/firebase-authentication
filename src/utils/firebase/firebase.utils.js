@@ -1,11 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-import {
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  getAuth,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAIsZmX_Fua8WOpedcM-WKIIjDTMtyE64A",
@@ -19,13 +14,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
 
 googleProvider.setCustomParameters({
-  prompt: "select_account",
-});
-
-facebookProvider.setCustomParameters({
   prompt: "select_account",
 });
 
@@ -33,7 +23,3 @@ export const auth = getAuth();
 
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
-
-export const singInWithFacebookPopup = () => {
-  signInWithPopup(auth, facebookProvider);
-};
