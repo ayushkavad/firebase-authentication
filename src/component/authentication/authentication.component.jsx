@@ -6,18 +6,23 @@ import { Link } from "react-router-dom";
 import "./authentication.styles.scss";
 
 const Authentication = () => {
-  const [user, setUser] = useState(null);
+  const [displayUser, setDisplayUser] = useState(null);
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    setUser(user.displayName);
+    const userName = user.displayName.split(" ")[0];
+    setDisplayUser(userName);
   };
 
   return (
     <div className="container">
       <div className="container__form">
         <div className="container__greet">
-          <h2 className="container__greet__title">Welcome back {user}</h2>
+          <h2 className="container__greet__title">
+            {!displayUser
+              ? "Continue to Login"
+              : `Welcome back, ${displayUser}`}
+          </h2>
           <p className="container__greet__info">
             Contine With Google or enter your details.
           </p>
